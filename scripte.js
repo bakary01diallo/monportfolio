@@ -22,4 +22,18 @@ window.addEventListener('DOMContentLoaded', () => {
 		section.classList.add('invisible');
 		observer.observe(section);
 	});
+
+    // Animation de survol sur les projets
+	const projets = document.querySelectorAll('.projet');
+	projets.forEach(projet => {
+		projet.addEventListener('mouseenter', () => {
+			projet.style.transform = 'scale(1.03)';
+			projet.style.boxShadow = '0 4px 16px rgba(52,152,219,0.15)';
+			projet.style.transition = 'all 0.3s';
+		});
+		projet.addEventListener('mouseleave', () => {
+			projet.style.transform = '';
+			projet.style.boxShadow = '';
+		});
+	});
 });
